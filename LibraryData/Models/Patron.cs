@@ -1,15 +1,17 @@
-﻿using System;
+﻿using LibraryData.Models;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace LibraryData
 {
     public class Patron
     {
-        public int PatronId { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [StringLength(50)]
         public string FirstName { get; set; }
+
         [Required]
         [StringLength(50)]
         public string LastName { get; set; }
@@ -22,8 +24,9 @@ namespace LibraryData
         [Required]
         [StringLength(20)]
         public string TelephoneNumber { get; set; }
+      
+        public LibraryCard LibraryCard { get; set; }
+        public LibraryBranch HomeLibraryBranch { get; set; }
 
-        ////Navigation properties
-        //public LibraryCard LibraryCard { get; set; }
     }
 }
